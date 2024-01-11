@@ -30,9 +30,9 @@ public class PersonController {
         return personService.getFirstPerson();
     }
 
-    @PutMapping
+    @PostMapping
     private ResponseEntity<PersonEntity> updatePerson(@RequestBody PersonEntity entity){
-        return personService.updatePerson(entity);
+        return personService.savePerson(entity);
     }
 
 }

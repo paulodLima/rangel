@@ -45,4 +45,9 @@ public class PersonService {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
+
+    public ResponseEntity<PersonEntity> savePerson(PersonEntity entity){
+        repository.save(entity);
+        return new ResponseEntity<>(entity, HttpStatus.OK);
+    }
 }

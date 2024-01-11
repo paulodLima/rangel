@@ -3,6 +3,7 @@ package com.braz.rangel.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "PERSON")
@@ -19,6 +20,10 @@ public class PersonEntity {
 
     @Column(name = "JOB_TITLE")
     private String jobTitle;
+
+    @ManyToOne
+    @JoinColumn(name = "PERSON_ID_ACCOUNT")
+    private AccountEntity accountEntity;
 
     public Long getId() {
         return id;
@@ -51,4 +56,13 @@ public class PersonEntity {
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
+
+    public AccountEntity getAccountEntity() {
+        return accountEntity;
+    }
+
+    public void setAccountEntity(AccountEntity accountEntity) {
+        this.accountEntity = accountEntity;
+    }
+
 }
